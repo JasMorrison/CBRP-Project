@@ -16,8 +16,8 @@ LimitedAreasContours = []
 CirclePositions = {}
 CirclesbyLayer = {}
 
-image_path1 = glob.glob('D:\\Univeristy Work\\Project\\Blue Channel JPGs\\*.jpg')
-image_path2 = glob.glob('D:\\Univeristy Work\\Project\\Green Channel\\*.jpg')
+image_path1 = glob.glob('blue channel')
+image_path2 = glob.glob('green channel')
 
 
 for path1, path2 in zip(image_path1, image_path2):
@@ -66,7 +66,7 @@ for path1, path2 in zip(image_path1, image_path2):
         center, radius = circle 
         cv2.circle(GreenChannelwCircles, center, radius, (0, 0, 255), thickness = cv2.FILLED)
         
-DestinationFolder = 'D:\\Univeristy Work\\Project\\Output2\\'
+DestinationFolder = ''
 os.makedirs(DestinationFolder, exist_ok=True)
 PathforCircleCount = os.path.join(DestinationFolder, f"output_all_images 300823.csv")
 
@@ -143,8 +143,8 @@ for i, centroids in enumerate(centroid_list_per_image):
             grouped_contours[idx] = [area_list[i][idx]]
 
 
-output_directory = "D:\\Univeristy Work\\Project"
-csv_filename = os.path.join(output_directory, "linked_contours w circles.csv")
+output_directory = ""
+csv_filename = os.path.join(output_directory, "")
 with open(csv_filename, mode='w', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["Group", "Contour Area", "Number of Circles"])
