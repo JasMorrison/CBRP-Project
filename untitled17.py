@@ -14,15 +14,10 @@ import csv
 
 #Applying the circles to the Green Channel 
 
-image = cv2.imread("D:\\Univeristy Work\\Project\\Manchester FLASH slides\\Conv 1hr\\Layer 1\\2002\\1. Gamma\\002002-1-001001001.tif")
+image = cv2.imread("")
 blur = cv2.GaussianBlur(image, (5,5), 0)
 RGBImage = cv2.cvtColor(blur, cv2.COLOR_BGR2RGB)
 gray_image = cv2.cvtColor(RGBImage, cv2.COLOR_RGB2GRAY)
-
-
-#image_paths1 = ['D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-01.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-02.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-03.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-04.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-05.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-06.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-07.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-08.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-09.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-10.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-11.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-12.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-13.jpg','D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-14.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-15.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-16.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-17.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-18.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-19.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-20.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-21.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-22.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-23.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-24.jpg', 'D:\\Univeristy Work\\Project\\Blue Channel JPGs\\C1-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-25.jpg']
-#image_paths2 = ['D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-01.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-02.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-03.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-04.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-05.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-06.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-07.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-08.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-09.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-10.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-11.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-12.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-13.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-14.jpg','D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-15.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-16.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-17.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-18.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-19.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-20.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-21.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-22.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-23.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-24.jpg', 'D:\\Univeristy Work\\Project\\Green Channel\\C2-Conv_Proton_2Gy_1h_Mouse_1,2,3.lif - Mouse 1 A-25.jpg']
-
 
 intensities = gray_image[gray_image > 32]
 circles = []
@@ -57,11 +52,11 @@ for circle in circles:
 #cv2.imshow("Points of highest intensity", image_with_circles)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-cv2.imwrite('D:\\Univeristy Work\\Project\\MC Conv1hr\\Conv1hr2002.1.1001a.jpg', image_with_circles)
+cv2.imwrite('', image_with_circles)
 
 #Creating the contour from the blue channel
 
-image1 = cv2.imread("D:\\Univeristy Work\\Project\\Manchester FLASH slides\\Conv 1hr\\Layer 1\\2002\\3. Nuclei\\002002-1-001001003.tif")
+image1 = cv2.imread("")
 npimage = np.array(image1)
 
 blur = cv2.GaussianBlur(image1, (5,5),0)
@@ -84,7 +79,7 @@ filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) >= min_area
 #filtered_contours = contours 
 
 
-image2 = cv2.imread("D:\\Univeristy Work\\Project\\MC Conv1hr\\Conv1hr2002.1.1001a.jpg")
+image2 = cv2.imread("")
 contour_image = image2.copy()
 cv2.drawContours(contour_image, filtered_contours, -1, (0, 255, 0), thickness=2)
 
@@ -92,7 +87,7 @@ cv2.drawContours(contour_image, filtered_contours, -1, (0, 255, 0), thickness=2)
 cv2.imshow("Contoured green channel w highest intensity points", contour_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-cv2.imwrite('D:\\Univeristy Work\\Project\\MC FLASH 20hr\\Conv1hr2002.1.1001b.jpg', contour_image)
+cv2.imwrite('', contour_image)
 
 #Isolate the Contours
 
@@ -120,7 +115,7 @@ for contour in filtered_contours:
 #cv2.imshow("Points of highest intensity", image_with_circles)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-cv2.imwrite('D:\\Univeristy Work\\Project\\MC Conv1hr\\Conv1hr2002.1.1001c.jpg', image_with_circles)
+cv2.imwrite('', image_with_circles)
 
 #Plotting
 """
@@ -135,7 +130,7 @@ plt.title("Number of gamma illuminated foci present in irradiated epithiliod nuc
 plt.show()
 """
 
-output_path = 'D:\\Univeristy Work\\Project\\MC Conv1hr\\Conv1hr2002.1.1001.csv'
+output_path = ''
 with open(output_path, 'w', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(['Contour_Area', 'Number_of_Circles'])
@@ -145,6 +140,8 @@ with open(output_path, 'w', newline='') as csv_file:
         csv_writer.writerow([contour_area, num_circles])
 
 print("Circles information saved to:", output_path)
+
+#Labelling the contours with their respective areas (useful for comparing to manual count)
 
 contour_image_with_text = contour_image.copy()
 for i, contour in enumerate(filtered_contours):
@@ -165,15 +162,17 @@ for i, contour in enumerate(filtered_contours):
         )
 
 # Display the image with contour areas
-cv2.imshow("Contoured image with area annotations 2002Conv1hr", contour_image_with_text)
+cv2.imshow("", contour_image_with_text)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 cv2.imwrite(
-    "D:\\Univeristy Work\\Project\\Contoured Image with Area Annotations Z13 T=1000.jpg",
+    "",
     contour_image_with_text,
 )
 
 """
+#Test for number of circles not counted
+
 detected_circles = []
 circle_image = contour_image.copy()
 for contour in filtered_contours:
